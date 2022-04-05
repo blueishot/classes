@@ -29,6 +29,21 @@ class Verduras extends Alimento {
     }
 }
 
+class Legumes extends Alimento {
+    alimento() {
+        console.log('Legume')
+    }
+
+    constructor(tipo, caloria, glicidios, proteinas, lipidios, calcio, fosforo, ferro) {
+        super(tipo, caloria, glicidios, proteinas, lipidios, calcio, fosforo, ferro);
+        this._cor = "vermelho";
+    }
+
+    get cor() {
+        return `cor de ${this._cor}`
+    }
+}
+
 const banana = new Alimento ("banana", 89, 6.7, 1.8, 16, 13, 47, 0.7)
 banana.quantidade()
 console.log(banana.caloria)
@@ -37,3 +52,8 @@ const batataDoce = new Verduras ('Batata Doce', 94.90, 0, 1.82, 0, 40, 62, 0.90,
 batataDoce.quantidade()
 batataDoce.alimento()
 console.log(batataDoce.ferro)
+
+const abobora = new Legumes ('Abobora', 21.3, 0, 1.32, 0, 20, 52, 0.53)
+abobora.alimento()
+console.log(abobora.ferro)
+console.log(abobora.cor)
